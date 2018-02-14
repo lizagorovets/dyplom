@@ -36,8 +36,7 @@ namespace WindowsFormsApp1
                 //MainWindow mainWindow = new MainWindow();
                 // mainWindow.Show();
                 autorize = true;
-                Form1 f = new Form1();
-                f.Show();
+                
                 this.Close();
             }
             else

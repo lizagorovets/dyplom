@@ -13,8 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        public String login;
-        public String password;
+
         Control control = new Control();
         public Form1()
         {
@@ -24,28 +23,28 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
 
-            login = textBox1.Text;
-            password = textBox2.Text;
-            SqlCommand autorization = new SqlCommand();
-            String rezult = control.autorization(login, password);
-                
-                if (rezult!=null)
-            {
-               // MessageBox.Show("Успешно");
-                
-                //MainWindow mainWindow = new MainWindow();
-                // mainWindow.Show();
-                AddPacient f = new AddPacient();
-                f.Show();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Неверный логин или пароль");
-            }
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Add(tabPage1);            
+            tabControl1.Visible = true;
+            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Add(tabPage2);            
+            tabControl1.Visible = true;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }

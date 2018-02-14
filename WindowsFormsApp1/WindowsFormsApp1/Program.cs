@@ -19,7 +19,8 @@ namespace WindowsFormsApp1
             Form2 form2 = new Form2();
             form2.ShowDialog();
             if (form2.autorize == true)
-            {                
+            {
+                
                 Application.Run(new Form1());
             }
         }
