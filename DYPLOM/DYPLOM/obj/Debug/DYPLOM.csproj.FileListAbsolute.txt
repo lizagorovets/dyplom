@@ -1,0 +1,10 @@
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csprojResolveAssemblyReference.cache
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.Form2.resources
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.Properties.Resources.resources
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csproj.GenerateResource.Cache
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csproj.CoreCompileInputs.cache
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\bin\Debug\DYPLOM.exe.config
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\bin\Debug\DYPLOM.exe
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\bin\Debug\DYPLOM.pdb
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.exe
+C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.pdb
