@@ -24,17 +24,24 @@ namespace DYPLOM
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text=="")
+                MessageBox.Show("Заполните поле логина!");
+            if (textBox2.Text == "")
+                MessageBox.Show("Заполните поле пароля!");
+            else
+            {
+                autorize = control.autorization(textBox1.Text, textBox2.Text);
+                if (autorize == true)
+                {
+                    MessageBox.Show("Успешно");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль");
+                }
 
-            autorize = control.autorization(textBox1.Text, textBox2.Text);
-              if (autorize==true)
-              {
-                MessageBox.Show("Успешно");
-                this.Close();
-              }
-              else
-              {
-                  MessageBox.Show("Неверный логин или пароль");
-              }
+            }
         }
     }
 }

@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace DYPLOM.service
 {
-    interface Controle
+    interface Control
     {
         
-        Boolean autorization(string login, string password);
+        bool autorization(string login, string password);
         void registration();
-        void createPacient();
-        void findPacient();
+        bool createPacient(string fName, string lName, string Otch, string dateOfBirth);
+        bool findPacient(string fName, string lName, string Otch, string dateOfBirth);
+        bool createPacientInformation(string lName, string fName, string Otch, string dateOfBirth, string phone,
+             string sex, string adress, string complaints, string dateOfAcceptance);
 
-        
+
 
     }
 }

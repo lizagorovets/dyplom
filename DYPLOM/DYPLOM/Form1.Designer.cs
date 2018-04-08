@@ -65,6 +65,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -84,7 +84,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -92,12 +91,15 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label38 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -114,7 +116,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 82);
+            this.textBox1.Location = new System.Drawing.Point(137, 82);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(153, 22);
             this.textBox1.TabIndex = 27;
@@ -123,7 +125,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(4, 159);
+            this.label3.Location = new System.Drawing.Point(41, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 18);
             this.label3.TabIndex = 26;
@@ -133,7 +135,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(41, 121);
+            this.label2.Location = new System.Drawing.Point(73, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 18);
             this.label2.TabIndex = 25;
@@ -143,7 +145,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(2, 86);
+            this.label1.Location = new System.Drawing.Point(43, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 18);
             this.label1.TabIndex = 24;
@@ -151,14 +153,14 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(85, 155);
+            this.textBox3.Location = new System.Drawing.Point(136, 155);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(153, 22);
             this.textBox3.TabIndex = 29;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(85, 120);
+            this.textBox2.Location = new System.Drawing.Point(136, 120);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(153, 22);
             this.textBox2.TabIndex = 28;
@@ -176,7 +178,7 @@
             this.действияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1352, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1388, 28);
             this.menuStrip1.TabIndex = 23;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -194,7 +196,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(245, 31);
+            this.tabControl1.Location = new System.Drawing.Point(316, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1060, 575);
@@ -473,6 +475,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dateTimePicker3);
+            this.tabPage2.Controls.Add(this.dateTimePicker2);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.richTextBox2);
             this.tabPage2.Controls.Add(this.label26);
@@ -482,7 +486,6 @@
             this.tabPage2.Controls.Add(this.richTextBox1);
             this.tabPage2.Controls.Add(this.label28);
             this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.textBox8);
             this.tabPage2.Controls.Add(this.label29);
             this.tabPage2.Controls.Add(this.textBox7);
             this.tabPage2.Controls.Add(this.label30);
@@ -493,7 +496,6 @@
             this.tabPage2.Controls.Add(this.label32);
             this.tabPage2.Controls.Add(this.textBox5);
             this.tabPage2.Controls.Add(this.label33);
-            this.tabPage2.Controls.Add(this.textBox4);
             this.tabPage2.Controls.Add(this.label34);
             this.tabPage2.Controls.Add(this.textBox10);
             this.tabPage2.Controls.Add(this.textBox11);
@@ -508,6 +510,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Новый пациент";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(482, 263);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 52);
+            this.button1.TabIndex = 82;
+            this.button1.Text = "Сохранить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // richTextBox2
             // 
@@ -580,18 +592,11 @@
             this.button4.Text = "Подобрать стельки и план лечения";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(124, 342);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(153, 22);
-            this.textBox8.TabIndex = 73;
-            // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label29.Location = new System.Drawing.Point(11, 346);
+            this.label29.Location = new System.Drawing.Point(11, 307);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(98, 18);
             this.label29.TabIndex = 72;
@@ -599,7 +604,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(124, 303);
+            this.textBox7.Location = new System.Drawing.Point(486, 348);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(153, 22);
             this.textBox7.TabIndex = 71;
@@ -608,7 +613,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label30.Location = new System.Drawing.Point(42, 303);
+            this.label30.Location = new System.Drawing.Point(375, 352);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(67, 18);
             this.label30.TabIndex = 70;
@@ -616,12 +621,13 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(307, 263);
+            this.button5.Location = new System.Drawing.Point(14, 352);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(157, 52);
+            this.button5.Size = new System.Drawing.Size(264, 31);
             this.button5.TabIndex = 69;
-            this.button5.Text = "Добавить пациента";
+            this.button5.Text = "Сохранить информацию пациента";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox6
             // 
@@ -677,13 +683,6 @@
             this.label33.Size = new System.Drawing.Size(72, 18);
             this.label33.TabIndex = 63;
             this.label33.Text = "Телефон";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(123, 147);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(153, 22);
-            this.textBox4.TabIndex = 62;
             // 
             // label34
             // 
@@ -746,36 +745,6 @@
             this.label37.TabIndex = 55;
             this.label37.Text = "Фамилия";
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(86, 220);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(153, 23);
-            this.button6.TabIndex = 36;
-            this.button6.Text = "Новый пациент";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(86, 183);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(153, 23);
-            this.button7.TabIndex = 38;
-            this.button7.Text = "Найти пациента";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(482, 263);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(157, 52);
-            this.button1.TabIndex = 82;
-            this.button1.Text = "Добавить пациента";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button2);
@@ -787,14 +756,6 @@
             this.tabPage3.Text = "Плантограмма";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(549, 500);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(639, 485);
@@ -805,11 +766,71 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(29, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(549, 500);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(127, 277);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(153, 23);
+            this.button6.TabIndex = 36;
+            this.button6.Text = "Новый пациент";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(127, 240);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(153, 23);
+            this.button7.TabIndex = 38;
+            this.button7.Text = "Найти пациента";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(127, 196);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(159, 22);
+            this.dateTimePicker1.TabIndex = 39;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(12, 197);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(111, 17);
+            this.label38.TabIndex = 40;
+            this.label38.Text = "Дата рождения";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(124, 307);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(153, 22);
+            this.dateTimePicker2.TabIndex = 83;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(124, 148);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(153, 22);
+            this.dateTimePicker3.TabIndex = 84;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 628);
+            this.ClientSize = new System.Drawing.Size(1388, 628);
+            this.Controls.Add(this.label38);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.tabControl1);
@@ -883,7 +904,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label30;
@@ -894,7 +914,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
@@ -908,6 +927,10 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }
 

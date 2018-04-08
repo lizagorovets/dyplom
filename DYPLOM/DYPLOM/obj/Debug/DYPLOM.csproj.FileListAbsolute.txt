@@ -8,3 +8,14 @@ C:\Users\eliza\source\repos\DYPLOM\DYPLOM\bin\Debug\DYPLOM.exe
 C:\Users\eliza\source\repos\DYPLOM\DYPLOM\bin\Debug\DYPLOM.pdb
 C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.exe
 C:\Users\eliza\source\repos\DYPLOM\DYPLOM\obj\Debug\DYPLOM.pdb
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csprojResolveAssemblyReference.cache
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.Form1.resources
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.Form2.resources
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.Properties.Resources.resources
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csproj.GenerateResource.Cache
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csproj.CoreCompileInputs.cache
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.exe
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.pdb
+E:\dyplom\DYPLOM\DYPLOM\bin\Debug\DYPLOM.exe.config
+E:\dyplom\DYPLOM\DYPLOM\bin\Debug\DYPLOM.exe
+E:\dyplom\DYPLOM\DYPLOM\bin\Debug\DYPLOM.pdb
