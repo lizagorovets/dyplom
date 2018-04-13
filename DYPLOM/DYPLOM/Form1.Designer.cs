@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.загрузитьПациентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,6 +66,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -92,19 +95,43 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label38 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.button8 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,7 +205,7 @@
             this.действияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1388, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1607, 28);
             this.menuStrip1.TabIndex = 23;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -199,7 +226,7 @@
             this.tabControl1.Location = new System.Drawing.Point(316, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1060, 575);
+            this.tabControl1.Size = new System.Drawing.Size(1287, 786);
             this.tabControl1.TabIndex = 35;
             this.tabControl1.Visible = false;
             // 
@@ -232,7 +259,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1052, 546);
+            this.tabPage1.Size = new System.Drawing.Size(1279, 757);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Данные пациента";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -506,10 +533,24 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1052, 546);
+            this.tabPage2.Size = new System.Drawing.Size(1279, 757);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Новый пациент";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(124, 148);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(153, 22);
+            this.dateTimePicker3.TabIndex = 84;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(124, 307);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(153, 22);
+            this.dateTimePicker2.TabIndex = 83;
             // 
             // button1
             // 
@@ -747,32 +788,275 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.pictureBox2);
             this.tabPage3.Controls.Add(this.pictureBox1);
+            this.tabPage3.Controls.Add(this.label60);
+            this.tabPage3.Controls.Add(this.label61);
+            this.tabPage3.Controls.Add(this.label57);
+            this.tabPage3.Controls.Add(this.label58);
+            this.tabPage3.Controls.Add(this.label59);
+            this.tabPage3.Controls.Add(this.label55);
+            this.tabPage3.Controls.Add(this.label56);
+            this.tabPage3.Controls.Add(this.label53);
+            this.tabPage3.Controls.Add(this.label54);
+            this.tabPage3.Controls.Add(this.label51);
+            this.tabPage3.Controls.Add(this.label52);
+            this.tabPage3.Controls.Add(this.label48);
+            this.tabPage3.Controls.Add(this.label49);
+            this.tabPage3.Controls.Add(this.label50);
+            this.tabPage3.Controls.Add(this.label47);
+            this.tabPage3.Controls.Add(this.label45);
+            this.tabPage3.Controls.Add(this.label46);
+            this.tabPage3.Controls.Add(this.label43);
+            this.tabPage3.Controls.Add(this.label44);
+            this.tabPage3.Controls.Add(this.label42);
+            this.tabPage3.Controls.Add(this.label41);
+            this.tabPage3.Controls.Add(this.label40);
+            this.tabPage3.Controls.Add(this.label39);
+            this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1052, 546);
+            this.tabPage3.Size = new System.Drawing.Size(1279, 757);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Плантограмма";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(393, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(386, 738);
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DYPLOM.Properties.Resources._13;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(374, 738);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(786, 514);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(202, 17);
+            this.label60.TabIndex = 25;
+            this.label60.Text = "отпечатка пяточной области";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(786, 497);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(158, 17);
+            this.label61.TabIndex = 24;
+            this.label61.Text = "Крайняя задняя точка";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(786, 460);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(62, 17);
+            this.label57.TabIndex = 23;
+            this.label57.Text = "пальцев";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(785, 443);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(160, 17);
+            this.label58.TabIndex = 22;
+            this.label58.Text = "третьего и четвертого ";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(785, 426);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(184, 17);
+            this.label59.TabIndex = 21;
+            this.label59.Text = "Точка между основаниями";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(785, 395);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(103, 17);
+            this.label55.TabIndex = 20;
+            this.label55.Text = "пятого пальца";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(785, 378);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(175, 17);
+            this.label56.TabIndex = 19;
+            this.label56.Text = "Крайняя передняя точка";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(790, 350);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(110, 17);
+            this.label53.TabIndex = 18;
+            this.label53.Text = "второго пальца";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(790, 333);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(175, 17);
+            this.label54.TabIndex = 17;
+            this.label54.Text = "Крайняя передняя точка";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(790, 295);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(122, 17);
+            this.label51.TabIndex = 16;
+            this.label51.Text = "большого пальца";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(790, 278);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(175, 17);
+            this.label52.TabIndex = 15;
+            this.label52.Text = "Крайняя передняя точка";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(812, 246);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(0, 17);
+            this.label48.TabIndex = 14;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(791, 246);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(158, 17);
+            this.label49.TabIndex = 13;
+            this.label49.Text = "передней части стопы";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(791, 229);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(120, 17);
+            this.label50.TabIndex = 12;
+            this.label50.Text = "Светлая точка в ";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(791, 195);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(112, 17);
+            this.label47.TabIndex = 11;
+            this.label47.Text = "пяточной кости";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(791, 178);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(163, 17);
+            this.label45.TabIndex = 10;
+            this.label45.Text = "кнаружи точка области";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(791, 161);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(169, 17);
+            this.label46.TabIndex = 9;
+            this.label46.Text = "Наиболее выступающая";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(790, 131);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(121, 17);
+            this.label43.TabIndex = 8;
+            this.label43.Text = "плюсневой кости";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(790, 114);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(105, 17);
+            this.label44.TabIndex = 7;
+            this.label44.Text = "Головка пятой";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(790, 78);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(121, 17);
+            this.label42.TabIndex = 6;
+            this.label42.Text = "плюсневой кости";
+            this.label42.Click += new System.EventHandler(this.label42_Click);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(790, 61);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(113, 17);
+            this.label41.TabIndex = 5;
+            this.label41.Text = "Головка первой";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(1156, 22);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(99, 17);
+            this.label40.TabIndex = 4;
+            this.label40.Text = "Правая стопа";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(1041, 22);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(91, 17);
+            this.label39.TabIndex = 3;
+            this.label39.Text = "Левая стопа";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(639, 485);
+            this.button2.Location = new System.Drawing.Point(864, 567);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 31);
             this.button2.TabIndex = 1;
             this.button2.Text = "Сохранить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(549, 500);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // button6
             // 
@@ -810,25 +1094,22 @@
             this.label38.TabIndex = 40;
             this.label38.Text = "Дата рождения";
             // 
-            // dateTimePicker2
+            // button8
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(124, 307);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(153, 22);
-            this.dateTimePicker2.TabIndex = 83;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(124, 148);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(153, 22);
-            this.dateTimePicker3.TabIndex = 84;
+            this.button8.Location = new System.Drawing.Point(141, 329);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(139, 31);
+            this.button8.TabIndex = 41;
+            this.button8.Text = "Сохранить";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1388, 628);
+            this.ClientSize = new System.Drawing.Size(1607, 822);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button7);
@@ -851,6 +1132,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -926,11 +1209,36 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

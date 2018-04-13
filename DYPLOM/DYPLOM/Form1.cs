@@ -1,4 +1,5 @@
-﻿using DYPLOM.service;
+﻿using DYPLOM.model;
+using DYPLOM.service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,6 +101,139 @@ namespace DYPLOM
         private void button2_Click(object sender, EventArgs e)
         {
             
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            int x = 0;
+            int y=0;
+            bool find = false;
+            Color color = new Color();
+            color = Color.FromArgb(255, 255, 255);
+            for (x = 0; x < bmp.Width; x++)
+            {
+                for (y = 0; y < bmp.Height/2; y++)
+                {
+                    if (bmp.GetPixel(x,y)==color)
+                    {
+                        bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
+                        find = true;
+                        Points p1 = new Points(x, y, "L-P1");
+                    }
+                    if (find == true)
+                    {                        
+                        break;                       
+                    }                        
+                }
+                if (find == true)
+                {
+                    break;
+                }
+            }
+            find = false;
+            /////////////////////////////
+            for (x = bmp.Width-1; x >0; x--)
+            {
+                for (y = 0; y < bmp.Height / 2; y++)
+                {
+                    if (bmp.GetPixel(x, y) == color)
+                    {
+                        bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
+                        find = true;
+                        Points p2 = new Points(x, y, "L-P2");
+                    }
+                    if (find == true)
+                    {
+                        break;
+                    }
+                }
+                if (find == true)
+                {
+                    break;
+                }
+            }
+            find = false;
+            /////////////////////////////
+            bool find1 = false;
+            for (x = 0; x < bmp.Width; x++)
+            {
+                for (y = bmp.Height - 1; y >0.7*bmp.Height ; y--)
+                {
+                    if (bmp.GetPixel(x, y) == color)
+                    {
+                        bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
+                        find1 = true;
+                        Points p1 = new Points(x, y, "L-P3");
+                    }
+                    if (find1 == true)
+                    {
+                        break;
+                    }
+                }
+                if (find1 == true)
+                {
+                    break;
+                }
+            }
+            pictureBox1.Image = (Image)bmp;
+
+            Bitmap bmp2 = new Bitmap(pictureBox2.Image);
+            int x2 = 0;
+            int y2 = 0;
+            bool find2 = false;
+            Color color2 = new Color();
+            color2 = Color.FromArgb(255, 255, 255);
+            for (x2 = bmp2.Width-1; x2 >= 0; x2--)
+            {
+                for (y2 = bmp2.Height-1; y2 >= 0; y2--)
+                {
+                    if (bmp2.GetPixel(x2, y2) == color2)
+                    {
+                        bmp2.SetPixel(x2, y2, Color.FromArgb(255, 0, 0));
+                        find2 = true;
+                        break;
+
+                    }
+                    if (find2 == true)
+                        break;
+                }
+            }
+            find2 = false;
+            //////////////////////////////////
+            for (x2 = 0; x2 <bmp2.Width; x2++)
+            {
+                for (y2 =0 ; y2 < bmp2.Height ; y2++)
+                {
+                    if (bmp2.GetPixel(x2, y2) == color2)
+                    {
+                        bmp2.SetPixel(x2, y2, Color.FromArgb(255, 0, 0));
+                        find2 = true;
+                        break;
+
+                    }
+                    if (find2 == true)
+                        break;
+                }
+            }
+            find2 = false;
+            //////////////////////////
+            for (x = bmp2.Width-1; x >0; x--)
+            {
+                for (y = bmp2.Height - 1; y > 0.7 * bmp2.Height; y--)
+                {
+                    if (bmp2.GetPixel(x, y) == color)
+                    {
+                        bmp2.SetPixel(x, y, Color.FromArgb(255, 0, 0));
+                        find2 = true;
+                    }
+                    if (find2 == true)
+                    {
+                        break;
+                    }
+                }
+                if (find2 == true)
+                {
+                    break;
+                }
+            }
+            pictureBox2.Image = (Image)bmp2;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -121,5 +255,36 @@ namespace DYPLOM
             }
             else MessageBox.Show("Ошибка добавления данных");
         }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Add(tabPage3);
+            tabControl1.Visible = true;
+
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            int x = Convert.ToInt32(e.X); // координата по оси X
+            int y = Convert.ToInt32(e.Y); // координата по оси Y
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
+            pictureBox1.Image = (Image)bmp;
+        }
+
+
     }
 }
