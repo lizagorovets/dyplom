@@ -12,9 +12,13 @@ namespace DYPLOM.service
     class ControlImpl : Control
     {
         WorkingWithData dataWorker;
+        List<Points> points;
+        List<Lines> lines;
         public ControlImpl()
         {
             this.dataWorker = new WorkingWithData();
+            points = new List<Points>();
+            lines = new List<Lines>();
         }
         public Boolean autorization(string login, string password)
         {
@@ -61,7 +65,7 @@ namespace DYPLOM.service
             string sex, string adress, string complaints, string dateOfAcceptance)
         {
             Pacient pacient = new Pacient();
-            pacient.setFName(fName);
+            pacient.setFName(fName); 
             pacient.setLName(lName);
             pacient.setSurname(Otch);
             pacient.setDateOfBirth(dateOfBirth);
@@ -72,6 +76,24 @@ namespace DYPLOM.service
             pacient.sex = sex;
             bool result= dataWorker.createPacientInformation(pacient);
             return result;
+        }
+
+        public void createPoints(int x, int y, string name)
+        {
+            Points point = new Points(x, y, name);
+            points.Add(point);
+            
+        }
+        public void countPoints()
+        {
+            Lines L_P1P2 = new Lines(points[0].getX(), points[0].getY(), points[1].getX(), points[1].getY());
+
+            lines.Add(L_P1P2);
+        }
+        public List<Lines> getLines()
+        {
+            return lines;
+           
         }
     }
 }

@@ -16,6 +16,7 @@ namespace DYPLOM.service
         bool findPacient(string fName, string lName, string Otch, string dateOfBirth);
         bool createPacientInformation(string lName, string fName, string Otch, string dateOfBirth, string phone,
              string sex, string adress, string complaints, string dateOfAcceptance);
+        void createPoints(int x, int y, string name);
 
 
 
