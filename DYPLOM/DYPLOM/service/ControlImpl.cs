@@ -13,12 +13,12 @@ namespace DYPLOM.service
     {
         WorkingWithData dataWorker;
         List<Points> points;
-        List<Lines> lines;
+        List<Line> lines;
         public ControlImpl()
         {
             this.dataWorker = new WorkingWithData();
             points = new List<Points>();
-            lines = new List<Lines>();
+            lines = new List<Line>();
         }
         public Boolean autorization(string login, string password)
         {
@@ -86,14 +86,19 @@ namespace DYPLOM.service
         }
         public void countPoints()
         {
-            Lines L_P1P2 = new Lines(points[0].getX(), points[0].getY(), points[1].getX(), points[1].getY());
+          //  Lines L_P1P2 = new Lines(points[0].getX(), points[0].getY(), points[1].getX(), points[1].getY());
 
-            lines.Add(L_P1P2);
+            //lines.Add(L_P1P2);
         }
-        public List<Lines> getLines()
+       /* public List<Lines> getLines()
         {
             return lines;
            
+        }*/
+        public List<Points> getPoints()
+        {
+            return points;
+
         }
     }
 }

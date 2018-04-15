@@ -33,7 +33,7 @@ namespace DYPLOM
                 autorize = control.autorization(textBox1.Text, textBox2.Text);
                 if (autorize == true)
                 {
-                    MessageBox.Show("Успешно");
+                   // MessageBox.Show("Успешно");
                     this.Close();
                 }
                 else

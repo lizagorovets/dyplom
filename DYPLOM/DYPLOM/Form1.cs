@@ -29,17 +29,23 @@ namespace DYPLOM
         bool R_P8 = false;
         bool R_P5 = false;
         bool draw = false;
-        int x1 = 0;
-        int y1 = 0;
-        int x2 = 0;
-        int y2 = 0;
         
+        int pointX;
+        int pointY;
+        bool drawRightPoint = false;
+        bool drawP1 = false;
+        bool drawP2 = false;
+        bool drawLeftPoint = false;
+        string key;
+        FIndPoints findPoints;
         ControlImpl control;
         public Form1()
         {
             InitializeComponent();
             this.control = new ControlImpl();
-            
+            findPoints = new FIndPoints();
+
+
 
         }
 
@@ -120,12 +126,85 @@ namespace DYPLOM
 
         private void button2_Click(object sender, EventArgs e)
         {
-            x1 = 100;
-            y1 = 200;
-            x2 = 350;
-            y2 = 200;
-            draw = true;
-            pictureBox1.Refresh();
+            findPoints.Z_Draw(findPoints.getRightPoints(), pictureBox1);
+
+            Line P1P2 = new Line("P1", "P2", findPoints.getRightPoints());
+            P1P2.draw(pictureBox1);
+
+            /*строим касательную к головке первой плюсневой кости */
+            Line P1P11 = new Line("P1", "P11", findPoints.getRightPoints());
+            P1P11.draw(pictureBox1);
+            findPoints.R_P16Draw(pictureBox1);
+            Line P1P16 = new Line("P1", "P16", findPoints.getRightPoints());
+            P1P16.draw(pictureBox1);
+            double angle=findPoints.countAngle("P1","P11", "P16", findPoints.getRightPoints());
+            textBox4.Text = angle.ToString();
+            /*строим касательную к головке пятой плюсневой кости */
+            Line P2P14 =new Line("P2", "P14", findPoints.getRightPoints());
+            P2P14.draw(pictureBox1);
+            findPoints.R_P15Draw(pictureBox1);
+            Line P2P15 = new Line("P2", "P15", findPoints.getRightPoints());
+            P2P15.draw(pictureBox1);
+            double angle2 = findPoints.countAngle("P2","P14", "P15", findPoints.getRightPoints());
+            textBox8.Text = angle2.ToString();
+
+            /*строим прямую между Р3 и Р4 */
+            Line P3P4 = new Line("P3", "P4", findPoints.getRightPoints());
+            P3P4.draw(pictureBox1);
+            /*строим перпендикуляр к Р3Р4 */
+            findPoints.R_P9Draw(pictureBox1);
+            findPoints.R_P10Draw(pictureBox1);
+            Line P4P9 = new Line("P4", "P9", findPoints.getRightPoints());
+            P4P9.draw(pictureBox1);
+            /*строим касательную к пяточной облалсти  */
+            Line P4P10 = new Line("P4", "P10", findPoints.getRightPoints());
+            P4P10.draw(pictureBox1);
+            /*угол пяточной области  */
+            double angle3 = findPoints.countAngle("P4","P9", "P10", findPoints.getRightPoints());
+            textBox13.Text = angle3.ToString();
+
+            findPoints.R_P7Draw(findPoints.getRightPoints(), pictureBox1);
+            Line ZP7 = new Line("Z", "P7", findPoints.getRightPoints());
+            ZP7.draw(pictureBox1);
+
+            /*строим Р7Р8*/
+            Line P7P8 = new Line("P7", "P8", findPoints.getRightPoints());
+            P7P8.draw(pictureBox1);
+
+            /*строим Р5Р6  и Р3Р6*/
+            findPoints.RP6_Draw(findPoints.getRightPoints(), pictureBox1);
+            Line P5P6 = new Line("P5", "P6", findPoints.getRightPoints());
+            P5P6.draw(pictureBox1);
+            Line P3P6 = new Line("P3", "P6", findPoints.getRightPoints());
+           // P3P6.draw(pictureBox1);
+            /*строим Р20Р6 */
+            findPoints.RP20_Draw(findPoints.getRightPoints(),pictureBox1);
+            Line P6P20 = new Line("P6", "P20", findPoints.getRightPoints());
+            P6P20.draw(pictureBox1);
+            findPoints.RP18_Draw(findPoints.getRightPoints(),pictureBox1);
+            findPoints.RP19_Draw(findPoints.getRightPoints(), pictureBox1);
+            /*рисуем Р18Р19*/
+            //  Line P18P19 = new Line("P18", "P19", findPoints.getRightPoints());
+            //  P18P19.draw(pictureBox1);
+            /*рисуем Р18Р17*/
+            findPoints.R_P17Draw(pictureBox1);
+            Line P17P19 = new Line("P17", "P19", findPoints.getRightPoints());
+              P17P19.draw(pictureBox1);
+
+            findPoints.R_P21Draw(pictureBox1);
+            Line P18P21 = new Line("P18", "P21", findPoints.getRightPoints());
+            P18P21.color = Color.Red;
+            P18P21.draw(pictureBox1);
+            double l1 = P17P19.countLengh();
+            double l2 = P18P21.countLengh();
+            double k = Math.Round(l1 / l2,2);
+            textBox14.Text = k.ToString();
+
+            Analizator analizator = new Analizator();
+            textBox15.Text = analizator.x1Analize(angle);
+            textBox16.Text = analizator.x2Analize(angle2);
+            textBox18.Text = analizator.x4Analize(angle3);
+            textBox17.Text = analizator.x3Analize(k);
 
 
         }
@@ -167,9 +246,7 @@ namespace DYPLOM
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            StatusBar statusBar = new StatusBar();
-            
+        {          
             int x = 0;
             int y = 0;
             if (L_P12 ==true)
@@ -177,16 +254,18 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox1);
-                control.createPoints(x, y, "L-P12");
+                findPoints.createRightPoints(x, y, "P12");
+                findPoints.writeName(x, y, "P12", pictureBox1);
                 L_P12 = false;
-                statusBar.Text = "Точка Р12 создана";
+                
             }
             if (L_P11 == true)
             {
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox1);
-                control.createPoints(x, y, "L-P11");
+                findPoints.createRightPoints(x, y, "P11");
+                findPoints.writeName(x, y, "P11", pictureBox1);
                 L_P11 = false;
             }
             if (L_P13 == true)
@@ -194,7 +273,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox1);
-                control.createPoints(x, y, "L-P13");
+                findPoints.createRightPoints(x, y, "P13");
+                findPoints.writeName(x, y, "P13", pictureBox1);
                 L_P13 = false;
             }
             if (L_P14 == true)
@@ -202,7 +282,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox1);
-                control.createPoints(x, y, "L-P14");
+                findPoints.createRightPoints(x, y, "P14");
+                findPoints.writeName(x, y, "P14", pictureBox1);
                 L_P14 = false;
             }
             if (L_P8 == true)
@@ -210,7 +291,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox1);
-                control.createPoints(x, y, "L-P8");
+                findPoints.createRightPoints(x, y, "P8");
+                findPoints.writeName(x, y, "P8", pictureBox1);
                 L_P8 = false;
             }
             if (L_P5 == true)
@@ -218,7 +300,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox1);
-                control.createPoints(x, y, "L-P5");
+                findPoints.createRightPoints(x, y, "P5");
+                findPoints.writeName(x, y, "P5", pictureBox1);
                 L_P5 = false;
             }
 
@@ -233,151 +316,19 @@ namespace DYPLOM
 
         private void button22_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(pictureBox1.Image);
-            int x = 0;
-            int y = 0;
-            bool find = false;
-            Color color = new Color();
-            color = Color.FromArgb(255, 255, 255);
-            for (x = 0; x < bmp.Width; x++)
-            {
-                for (y = 0; y < bmp.Height / 2; y++)
-                {
-                    if (bmp.GetPixel(x, y) == color)
-                    {
-                        bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
-                        find = true;
-                        control.createPoints(x, y, "L-P1");
-                    }
-                    if (find == true)
-                    {
-                        break;
-                    }
-                }
-                if (find == true)
-                {
-                    break;
-                }
-            }
-            find = false;
-            /////////////////////////////
-            for (x = bmp.Width - 1; x > 0; x--)
-            {
-                for (y = 0; y < bmp.Height / 2; y++)
-                {
-                    if (bmp.GetPixel(x, y) == color)
-                    {
-                        bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
-                        find = true;
-                        control.createPoints(x, y, "L-P2");
-                    }
-                    if (find == true)
-                    {
-                        break;
-                    }
-                }
-                if (find == true)
-                {
-                    break;
-                }
-            }
-            find = false;
-            /////////////////////////////
-            bool find1 = false;
-            for (x = 0; x < bmp.Width; x++)
-            {
-                for (y = bmp.Height - 1; y > 0.7 * bmp.Height; y--)
-                {
-                    if (bmp.GetPixel(x, y) == color)
-                    {
-                        bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
-                        find1 = true;
-                        control.createPoints(x,y, "L-P3");
-                    }
-                    if (find1 == true)
-                    {
-                        break;
-                    }
-                }
-                if (find1 == true)
-                {
-                    break;
-                }
-            }
-            pictureBox1.Image = (Image)bmp;
+            findPoints.R_P1Draw(pictureBox1);
+            findPoints.R_P2Draw(pictureBox1);
+            findPoints.R_P3Draw(pictureBox1);     
+            findPoints.R_P4Draw(pictureBox1);
+            findPoints.R_P5Draw(pictureBox1);
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            Color color = new Color();
-            color = Color.FromArgb(255, 255, 255);
-            Bitmap bmp2 = new Bitmap(pictureBox2.Image);
-            
-            bool find2 = false;
-            Color color2 = new Color();
-            color2 = Color.FromArgb(255, 255, 255);
-            for (int x2 = bmp2.Width - 1; x2 >= 0; x2--)
-            {
-                for (int y2 = bmp2.Height - 1; y2 >= 0; y2--)
-                {
-                    if (bmp2.GetPixel(x2, y2) == color2)
-                    {
-                        bmp2.SetPixel(x2, y2, Color.FromArgb(255, 0, 0));
-                        find2 = true;
-                        control.createPoints(x2, y2, "L_P2");
-                        break;
-
-                    }
-                    if (find2 == true)
-                        break;
-                }
-            }
-            find2 = false;
-            //////////////////////////////////
-           for (int x2 = 0; x2 < bmp2.Width; x2++)
-            {
-                for (int y2 = bmp2.Height/5; y2 < bmp2.Height; y2++)
-                {
-                    if (bmp2.GetPixel(x2, y2) == color2)
-                    {
-                        bmp2.SetPixel(x2, y2, Color.FromArgb(255, 0, 0));
-                        find2 = true;
-                        control.createPoints(x2, y2, "L_P1");
-                        break;
-                    }
-                    if (find2 == true)
-                    {
-                        break;
-                    }                        
-                }
-                if (find2 == true)
-                {
-                    break;
-                }
-            }
-            find2 = false;
-            //////////////////////////
-            for (int x = bmp2.Width - 1; x > 0; x--)
-            {
-                for (int y = bmp2.Height - 1; y > 0.7 * bmp2.Height; y--)
-                {
-                    if (bmp2.GetPixel(x, y) == color)
-                    {
-                        bmp2.SetPixel(x, y, Color.FromArgb(255, 0, 0));
-                        find2 = true;
-                        control.createPoints(x, y, "L_P-13");
-                    }
-                    if (find2 == true)
-                    {
-                        break;
-                    }
-                }
-                if (find2 == true)
-                {
-                    break;
-                }
-            }
-            pictureBox2.Image = (Image)bmp2;
+            findPoints.L_P1Draw(pictureBox2);
+            findPoints.L_P2Draw(pictureBox2);
+            findPoints.L_P3Draw(pictureBox2);
+            findPoints.L_P4Draw(pictureBox2);
 
         }
 
@@ -397,7 +348,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox2);
-                control.createPoints(x, y, "R-P12");
+                findPoints.createLeftPoints(x, y, "P12");
+                findPoints.writeName(x, y, "P12", pictureBox2);
                 R_P12 = false;
                
             }
@@ -406,7 +358,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox2);
-                control.createPoints(x, y, "R-P11");
+                findPoints.createLeftPoints(x, y, "P11");
+                findPoints.writeName(x, y, "P11", pictureBox2);
                 R_P11 = false;
             }
             if (R_P13 == true)
@@ -414,7 +367,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox2);
-                control.createPoints(x, y, "R-P13");
+                findPoints.createLeftPoints(x, y, "P13");
+                findPoints.writeName(x, y, "P13", pictureBox2);
                 R_P13 = false;
             }
             if (R_P14 == true)
@@ -422,7 +376,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox2);
-                control.createPoints(x, y, "R-P14");
+                findPoints.createLeftPoints(x, y, "P14");
+                findPoints.writeName(x, y, "P14", pictureBox2);
                 R_P14 = false;
             }
             if (R_P8 == true)
@@ -430,7 +385,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox2);
-                control.createPoints(x, y, "R-P8");
+                findPoints.createLeftPoints(x, y, "P8");
+                findPoints.writeName(x, y, "P8", pictureBox2);
                 R_P8 = false;
             }
             if (R_P5 == true)
@@ -438,7 +394,8 @@ namespace DYPLOM
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox2);
-                control.createPoints(x, y, "R-P5");
+                findPoints.createLeftPoints(x, y, "P5");
+                findPoints.writeName(x, y, "P5", pictureBox2);
                 R_P5 = false;
             }
 
@@ -471,7 +428,7 @@ namespace DYPLOM
 
         private void button20_Click(object sender, EventArgs e)
         {
-            L_P8 = true;
+            L_P5 = true;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -502,22 +459,6 @@ namespace DYPLOM
         private void button19_Click(object sender, EventArgs e)
         {
             R_P5 = true;
-        }
-
-
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-            if (draw==true)
-            {
-               // List<Lines> drawLines = control.getLines();
-                for (int i = 0; i < control.getLines().Count; i++)
-                {
-                    e.Graphics.DrawLine(System.Drawing.Pens.Green, control.getLines()[i].getX1(), control.getLines()[i].getY1(),
-                        control.getLines()[i].getX2(), control.getLines()[i].getY2());
-                }
-                draw = false;
-            }
-            
         }
     }
 }

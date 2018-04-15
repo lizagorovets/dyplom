@@ -20,8 +20,10 @@ namespace DYPLOM
             form2.ShowDialog();
             if (form2.autorize == true)
             {
-
-                Application.Run(new Form1());
+                Form1 form = new Form1();
+                form.Width = 1500;
+                form.Height = 1000;
+                Application.Run(form);
             }
         }
     }

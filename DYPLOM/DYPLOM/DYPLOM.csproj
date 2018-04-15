@@ -45,8 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analizator.cs" />
     <Compile Include="connection\DbConnector.cs" />
     <Compile Include="data\WorkingWithData.cs" />
+    <Compile Include="FIndPoints.cs" />
+    <Compile Include="Line.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,7 +73,6 @@
     <Compile Include="model\History.cs" />
     <Compile Include="model\Insults.cs" />
     <Compile Include="model\Points.cs" />
-    <Compile Include="service\Lines.cs" />
     <Compile Include="service\ParametersCounter.cs" />
     <Compile Include="service\Control.cs" />
     <Compile Include="Form1.cs">
@@ -125,6 +127,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\110.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
