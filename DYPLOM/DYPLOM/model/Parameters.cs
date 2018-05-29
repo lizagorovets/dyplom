@@ -8,5 +8,7 @@ namespace DYPLOM.model
 {
     class Parameters
     {
+        public string source1;
+        public string source2;
     }
 }

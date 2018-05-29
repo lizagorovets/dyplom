@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +31,7 @@ namespace DYPLOM
         bool R_P8 = false;
         bool R_P5 = false;
         bool draw = false;
-        
+
         int pointX;
         int pointY;
         bool drawRightPoint = false;
@@ -54,7 +56,7 @@ namespace DYPLOM
             string lName = textBox1.Text;
             string fName = textBox2.Text;
             string Otch = textBox3.Text;
-            string dateOfBirth=dateTimePicker1.Value.ToString();
+            string dateOfBirth = dateTimePicker1.Value.ToString();
             if (lName != "" && fName != "" && Otch != "")
             {
                 bool result = control.createPacient(fName, lName, Otch, dateOfBirth);
@@ -63,17 +65,21 @@ namespace DYPLOM
                     tabControl1.TabPages.Remove(tabPage1);
                     tabControl1.TabPages.Remove(tabPage2);
                     tabControl1.TabPages.Remove(tabPage3);
+                    tabControl1.TabPages.Remove(tabPage4);
                     tabControl1.TabPages.Add(tabPage2);
+                    tabControl1.TabPages.Add(tabPage3);
                     tabControl1.Visible = true;
                     MessageBox.Show("Пациент добавлен!");
                     textBox10.Text = fName;
                     textBox12.Text = lName;
                     textBox11.Text = Otch;
                     dateTimePicker3.Value = dateTimePicker1.Value;
+                    pictureBox1.Visible = false;
+                    pictureBox2.Visible = false;
                 }
             }
             else MessageBox.Show("Заполните все поля!");
-            }
+        }
 
 
         private void button7_Click(object sender, EventArgs e)
@@ -81,31 +87,62 @@ namespace DYPLOM
             String lName = textBox1.Text;
             String fName = textBox2.Text;
             String Otch = textBox3.Text;
+            string dateOfBirth = dateTimePicker1.Value.ToString();
 
-         /*   if (lName != null && fName != null && Otch != null)
+            if (lName != null && fName != null && Otch != null)
             {
                 try
                 {
-                    SqlDataReader reader = control.findPacient(fName, lName, Otch);
-                    if (reader != null)
+                    Pacient pacient = control.getPacient(fName, lName, Otch, dateOfBirth);
+                    if (pacient != null)
                     {
                         tabControl1.TabPages.Remove(tabPage1);
                         tabControl1.TabPages.Remove(tabPage2);
+                        tabControl1.TabPages.Remove(tabPage3);
+                        tabControl1.TabPages.Remove(tabPage4);
                         tabControl1.TabPages.Add(tabPage1);
+                        tabControl1.TabPages.Add(tabPage4);
                         tabControl1.Visible = true;
-                        List<string> avtoNames = new List<string>();
-                        while (reader.Read())
-                        {
-                            label16.Text = reader.GetValue(0).ToString();
-                            label17.Text = reader[1].ToString();
-                            label18.Text = reader[2].ToString();
-                            label21.Text = reader[3].ToString();
-                            label4.Text = reader[4].ToString();
-                            label5.Text = reader[5].ToString();
-                            label7.Text = reader[6].ToString();
-                        }
-                        
-                        
+
+                        label16.Text = pacient.getLName();
+                        label17.Text = pacient.getFName();
+                        label18.Text = pacient.getSurname();
+                        label19.Text = pacient.getDateOfBirth();
+                        label20.Text = pacient.phone;
+                        label21.Text = pacient.sex;
+                        label22.Text = pacient.adress;
+
+                        History history = control.getHistory(pacient.id);
+                        Diagnose diagnose = control.getDiagnose(history.diagnoseId);
+                        Parameters param = control.getPlantSource(history.plantographyId);
+                        label23.Text = history.diagnose;
+                        label24.Text = history.date;
+                        richTextBox3.Text = history.complaints;
+                        richTextBox4.Text = history.recomendations;
+                        label25.Text = history.insults;
+
+                        textBox42.Text = diagnose.f1R;
+                        textBox41.Text = diagnose.f2R;
+                        textBox40.Text = diagnose.f3R;
+                        textBox39.Text = diagnose.f4R;
+
+                        textBox37.Text = diagnose.f1L;
+                        textBox36.Text = diagnose.f2L;
+                        textBox35.Text = diagnose.f3L;
+                        textBox34.Text = diagnose.f4L;
+
+                        textBox38.Text = diagnose.f1R_res;
+                        textBox33.Text = diagnose.f2R_res;
+                        textBox32.Text = diagnose.f3R_res;
+                        textBox31.Text = diagnose.f4R_res;
+
+                        textBox30.Text = diagnose.f1L_res;
+                        textBox29.Text = diagnose.f2L_res;
+                        textBox28.Text = diagnose.f3L_res;
+                        textBox27.Text = diagnose.f4L_res;
+
+                        pictureBox3.Image = Image.FromFile(@param.source1);
+                        pictureBox4.Image = Image.FromFile(@param.source2);
                     }
                     else MessageBox.Show("Пациент не найден!");
 
@@ -116,11 +153,30 @@ namespace DYPLOM
                 }
 
             }
-            else MessageBox.Show("Заполните все поля!");*/
+            else MessageBox.Show("Заполните все поля!");
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string lName = textBox12.Text;
+            string fName= textBox10.Text;
+            string Otch= textBox11.Text ;
+            string dateOfBirth = "1";
+            Pacient pacient= control.getPacient(fName, lName, Otch, dateOfBirth);
+            if (pacient.id!= null)
+            {
+                string complaints = richTextBox2.Text;
+                string date= dateTimePicker2.Value.ToString();
+                bool result = control.saveInfo(complaints, date, pacient);
+                if (result==true)
+                {
+                    MessageBox.Show("Информация успешно сохранена!");
+                }
+                else MessageBox.Show("Информация не сохранена!");
+            }
 
         }
 
@@ -137,15 +193,15 @@ namespace DYPLOM
             findPoints.R_P16Draw(pictureBox1);
             Line P1P16 = new Line("P1", "P16", findPoints.getRightPoints());
             P1P16.draw(pictureBox1);
-            double angle=findPoints.countAngle("P1","P11", "P16", findPoints.getRightPoints());
+            double angle = findPoints.countAngle("P1", "P11", "P16", findPoints.getRightPoints());
             textBox4.Text = angle.ToString();
             /*строим касательную к головке пятой плюсневой кости */
-            Line P2P14 =new Line("P2", "P14", findPoints.getRightPoints());
+            Line P2P14 = new Line("P2", "P14", findPoints.getRightPoints());
             P2P14.draw(pictureBox1);
             findPoints.R_P15Draw(pictureBox1);
             Line P2P15 = new Line("P2", "P15", findPoints.getRightPoints());
             P2P15.draw(pictureBox1);
-            double angle2 = findPoints.countAngle("P2","P14", "P15", findPoints.getRightPoints());
+            double angle2 = findPoints.countAngle("P2", "P14", "P15", findPoints.getRightPoints());
             textBox8.Text = angle2.ToString();
 
             /*строим прямую между Р3 и Р4 */
@@ -160,7 +216,7 @@ namespace DYPLOM
             Line P4P10 = new Line("P4", "P10", findPoints.getRightPoints());
             P4P10.draw(pictureBox1);
             /*угол пяточной области  */
-            double angle3 = findPoints.countAngle("P4","P9", "P10", findPoints.getRightPoints());
+            double angle3 = findPoints.countAngle("P4", "P9", "P10", findPoints.getRightPoints());
             textBox13.Text = angle3.ToString();
 
             findPoints.R_P7Draw(findPoints.getRightPoints(), pictureBox1);
@@ -176,12 +232,12 @@ namespace DYPLOM
             Line P5P6 = new Line("P5", "P6", findPoints.getRightPoints());
             P5P6.draw(pictureBox1);
             Line P3P6 = new Line("P3", "P6", findPoints.getRightPoints());
-           // P3P6.draw(pictureBox1);
+            // P3P6.draw(pictureBox1);
             /*строим Р20Р6 */
-            findPoints.RP20_Draw(findPoints.getRightPoints(),pictureBox1);
+            findPoints.RP20_Draw(findPoints.getRightPoints(), pictureBox1);
             Line P6P20 = new Line("P6", "P20", findPoints.getRightPoints());
             P6P20.draw(pictureBox1);
-            findPoints.RP18_Draw(findPoints.getRightPoints(),pictureBox1);
+            findPoints.RP18_Draw(findPoints.getRightPoints(), pictureBox1);
             findPoints.RP19_Draw(findPoints.getRightPoints(), pictureBox1);
             /*рисуем Р18Р19*/
             //  Line P18P19 = new Line("P18", "P19", findPoints.getRightPoints());
@@ -189,7 +245,7 @@ namespace DYPLOM
             /*рисуем Р18Р17*/
             findPoints.R_P17Draw(pictureBox1);
             Line P17P19 = new Line("P17", "P19", findPoints.getRightPoints());
-              P17P19.draw(pictureBox1);
+            P17P19.draw(pictureBox1);
 
             findPoints.R_P21Draw(pictureBox1);
             Line P18P21 = new Line("P18", "P21", findPoints.getRightPoints());
@@ -197,7 +253,7 @@ namespace DYPLOM
             P18P21.draw(pictureBox1);
             double l1 = P17P19.countLengh();
             double l2 = P18P21.countLengh();
-            double k = Math.Round(l1 / l2,2);
+            double k = Math.Round(l1 / l2, 2);
             textBox14.Text = k.ToString();
 
             Analizator analizator = new Analizator();
@@ -220,9 +276,9 @@ namespace DYPLOM
             string adress = textBox6.Text;
             string complaints = richTextBox2.Text;
             string dateOfAcceptance = dateTimePicker2.Value.ToString();
-           bool result= control.createPacientInformation(lName,  fName, Otch, dateOfBirth, phone,
-             sex, adress,  complaints,  dateOfAcceptance);
-            if (result==true)
+            bool result = control.createPacientInformation(lName, fName, Otch, dateOfBirth, phone,
+              sex, adress, complaints, dateOfAcceptance);
+            if (result == true)
             {
                 MessageBox.Show("Данные успешно добавлены");
             }
@@ -246,10 +302,10 @@ namespace DYPLOM
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {          
+        {
             int x = 0;
             int y = 0;
-            if (L_P12 ==true)
+            if (L_P12 == true)
             {
                 x = Convert.ToInt32(e.X); // координата по оси X
                 y = Convert.ToInt32(e.Y); // координата по оси Y
@@ -257,7 +313,7 @@ namespace DYPLOM
                 findPoints.createRightPoints(x, y, "P12");
                 findPoints.writeName(x, y, "P12", pictureBox1);
                 L_P12 = false;
-                
+
             }
             if (L_P11 == true)
             {
@@ -318,7 +374,7 @@ namespace DYPLOM
         {
             findPoints.R_P1Draw(pictureBox1);
             findPoints.R_P2Draw(pictureBox1);
-            findPoints.R_P3Draw(pictureBox1);     
+            findPoints.R_P3Draw(pictureBox1);
             findPoints.R_P4Draw(pictureBox1);
             findPoints.R_P5Draw(pictureBox1);
         }
@@ -332,7 +388,7 @@ namespace DYPLOM
 
         }
 
-       private void setPointImg(int x, int y, PictureBox pictureBox)
+        private void setPointImg(int x, int y, PictureBox pictureBox)
         {
             Bitmap bmp = new Bitmap(pictureBox.Image);
             bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
@@ -351,7 +407,7 @@ namespace DYPLOM
                 findPoints.createLeftPoints(x, y, "P12");
                 findPoints.writeName(x, y, "P12", pictureBox2);
                 R_P12 = false;
-               
+
             }
             if (R_P11 == true)
             {
@@ -459,6 +515,145 @@ namespace DYPLOM
         private void button19_Click(object sender, EventArgs e)
         {
             R_P5 = true;
+        }
+
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            Bitmap image; //Bitmap для открываемого изображения
+
+            OpenFileDialog open_dialog = new OpenFileDialog(); //создание диалогового окна для выбора файла
+            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*"; //формат загружаемого файла
+            if (open_dialog.ShowDialog() == DialogResult.OK) //если в окне была нажата кнопка "ОК"
+            {
+                try
+                {
+                    image = new Bitmap(open_dialog.FileName);
+                    //вместо pictureBox1 укажите pictureBox, в который нужно загрузить изображение 
+                    this.pictureBox1.Size = image.Size;
+                    pictureBox1.Image = image;
+                    pictureBox1.Invalidate();
+                    button26.Visible = false;
+                    pictureBox1.Visible = true;
+                }
+                catch
+                {
+                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            Bitmap image; //Bitmap для открываемого изображения
+
+            OpenFileDialog open_dialog = new OpenFileDialog(); //создание диалогового окна для выбора файла
+            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*"; //формат загружаемого файла
+            if (open_dialog.ShowDialog() == DialogResult.OK) //если в окне была нажата кнопка "ОК"
+            {
+                try
+                {
+                    image = new Bitmap(open_dialog.FileName);
+                    //вместо pictureBox1 укажите pictureBox, в который нужно загрузить изображение 
+                    this.pictureBox2.Size = image.Size;
+                    pictureBox2.Image = image;
+                    pictureBox2.Invalidate();
+                    pictureBox2.Visible = true;
+                    button25.Visible = false;
+                }
+                catch
+                {
+                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string lName = textBox12.Text;
+            string fName = textBox10.Text;
+            string Otch = textBox11.Text;
+            string dateOfBirth = "1";
+            Pacient pacient = control.getPacient(fName, lName, Otch, dateOfBirth);
+            if (pacient.id != null)
+            {
+                string recomendations = richTextBox1.Text;
+                string insults = textBox9.Text;
+                string diagnose = textBox7.Text;
+                bool result = control.complete(recomendations, diagnose, insults, pacient);
+                if (result == true)
+                {
+                    MessageBox.Show("Информация успешно сохранена!");
+                }
+                else MessageBox.Show("Информация не сохранена!");
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            string lName = textBox12.Text;
+            string fName = textBox10.Text;
+            string Otch = textBox11.Text;
+            string dateOfBirth = "1";
+            
+            Pacient pacient = control.getPacient(fName, lName, Otch, dateOfBirth);
+            if (pacient.id != null)
+            {
+                string source1 = "E:\\plantography\\" + pacient.id + "_right.jpg";
+                string source2 = "E:\\plantography\\" + pacient.id + "_left.jpg";
+                pictureBox1.Image.Save(@source1, ImageFormat.Jpeg);
+                pictureBox2.Image.Save(@source2, ImageFormat.Jpeg);
+
+
+                Diagnose diag = new Diagnose();
+
+                diag.f1R = textBox4.Text;
+                diag.f2R = textBox8.Text;
+                diag.f3R = textBox13.Text;
+                diag.f4R = textBox14.Text;
+
+                diag.f1L = textBox22.Text;
+                diag.f2L = textBox21.Text;
+                diag.f3L = textBox20.Text;
+                diag.f4L = textBox19.Text;
+
+                diag.f1R_res = textBox15.Text;
+                diag.f2R_res = textBox16.Text;
+                diag.f3R_res = textBox18.Text;
+                diag.f4R_res = textBox17.Text;
+
+                diag.f1L_res = textBox26.Text;
+                diag.f2L_res = textBox25.Text;
+                diag.f3L_res = textBox24.Text;
+                diag.f4L_res = textBox23.Text;
+                diag.id = pacient.id;
+
+                bool res = control.saveDiagnose(diag);
+                bool res2 = control.saveSource(source1, source2, pacient.id);
+                if (res==true&res2==true)
+                {
+                    MessageBox.Show("Информация успешно сохранена!");
+                }
+                else MessageBox.Show("Информация не сохранена!");
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

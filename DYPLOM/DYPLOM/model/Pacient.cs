@@ -8,15 +8,16 @@ namespace DYPLOM.model
 {
     class Pacient
     {
+        public string id;
         private string fName;
         private string lName;
         private string surname;
         private string dateOfBirth;
-        public string phone;
-        public string sex ;
-        public string adress ;
-        public string complaints;
-        public string dateOfAcceptance ;
+        public string phone { get; set; }
+        public string sex { get; set; }
+        public string adress { get; set; }
+        public string complaints { get; set; }
+        public string dateOfAcceptance { get; set; }
 
         public void setFName(string fName)
         {

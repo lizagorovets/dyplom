@@ -86,19 +86,64 @@ namespace DYPLOM.service
         }
         public void countPoints()
         {
-          //  Lines L_P1P2 = new Lines(points[0].getX(), points[0].getY(), points[1].getX(), points[1].getY());
-
-            //lines.Add(L_P1P2);
         }
-       /* public List<Lines> getLines()
-        {
-            return lines;
-           
-        }*/
+
         public List<Points> getPoints()
         {
             return points;
+        }
 
+        public Pacient getPacient(string fName, string lName, string Otch, string dateOfBirth)
+        {
+            return dataWorker.getPacient(fName, lName, Otch, dateOfBirth);
+        }
+
+        public bool saveInfo(string complaints, string date, Pacient pacient)
+        {
+            bool result = dataWorker.createInformation(complaints, date, pacient);
+            return result;
+        }
+
+        public bool complete(string recomendations, string diagnose, string insultId, Pacient pacient)
+        {
+            bool result = dataWorker.complete(recomendations, diagnose, insultId, pacient);
+            return result;
+        }
+
+        public bool saveDiagnose(Diagnose diagnose)
+        {
+            bool result = dataWorker.createDiagnose(diagnose);
+            if (result==true)
+            {
+                result = dataWorker.updDiagHistory(diagnose.id);
+                return result;
+            }
+            return false;
+        }
+
+        public bool saveSource(string source1 , string source2, string id)
+        {
+            bool result = dataWorker.createSource(source1, source2, id);
+            if (result == true)
+            {
+                result = dataWorker.updPLHistory(id);
+                return result;
+            }
+            return false;
+        }
+
+        public History getHistory(string pacientId)
+        {
+            return dataWorker.getHistory(pacientId);
+        }
+        public Parameters getPlantSource(string plantId)
+        {
+            return dataWorker.getSource(plantId);
+        }
+
+        public Diagnose getDiagnose(string diagId)
+        {
+            return dataWorker.getDiagnode(diagId);
         }
     }
 }
