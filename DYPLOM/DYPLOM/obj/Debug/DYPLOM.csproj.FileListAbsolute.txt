@@ -18,4 +18,6 @@ E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csproj.GenerateResource.Cache
 E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csproj.CoreCompileInputs.cache
 E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.exe
 E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.pdb
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.Main.resources
+E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.Optimization.resources
 E:\dyplom\DYPLOM\DYPLOM\obj\Debug\DYPLOM.csprojResolveAssemblyReference.cache

@@ -50,6 +50,20 @@
     <Compile Include="data\WorkingWithData.cs" />
     <Compile Include="FIndPoints.cs" />
     <Compile Include="Line.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Optimization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Optimization.Designer.cs">
+      <DependentUpon>Optimization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="optimization\Simplex.cs" />
+    <Compile Include="optimization\Symplex.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Optimization.resx">
+      <DependentUpon>Optimization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

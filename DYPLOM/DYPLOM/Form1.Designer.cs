@@ -163,7 +163,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label38 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -1539,16 +1538,6 @@
             this.label38.TabIndex = 40;
             this.label38.Text = "Дата рождения";
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(141, 329);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(139, 31);
-            this.button8.TabIndex = 41;
-            this.button8.Text = "Сохранить";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // button25
             // 
             this.button25.Location = new System.Drawing.Point(383, 10);
@@ -1834,7 +1823,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1727, 1026);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button7);
@@ -1848,7 +1836,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Работа с пациентами";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -1952,7 +1940,6 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
