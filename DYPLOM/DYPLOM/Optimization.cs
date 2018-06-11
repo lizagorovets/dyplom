@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +22,15 @@ namespace DYPLOM
             dataGridView1.Rows.Add();
             dataGridView1.Rows.Add();
             dataGridView1.Rows.Add();
+            dataGridView1.Rows.Add();
 
-            dataGridView1.Rows[0].HeaderCell.Value = "Пластазот";
-            dataGridView1.Rows[1].HeaderCell.Value = "ПВД мягкий (2мм)";
-            dataGridView1.Rows[2].HeaderCell.Value = "Y-foam мультиколор перфорированный ";
-            dataGridView1.Rows[3].HeaderCell.Value = "Полипропилен 3 мм";
+            dataGridView1.Rows[0].HeaderCell.Value = "Грабопор";
+            dataGridView1.Rows[1].HeaderCell.Value = "Eva 20 мм";
+            dataGridView1.Rows[2].HeaderCell.Value = "Полипропилен 4мм";
+            dataGridView1.Rows[3].HeaderCell.Value = "Кожа искусственная";
             dataGridView1.Rows[4].HeaderCell.Value = "Ортофом РХА-500 (см2)";
-            dataGridView1.Rows[5].HeaderCell.Value = "Метатарзальных валик";
+            dataGridView1.Rows[5].HeaderCell.Value = "Заготовка стельки";
+            dataGridView1.Rows[6].HeaderCell.Value = "Корректирующий элемент";
 
             dataGridView1.RowHeadersWidth = 200;
             //dataGridView1.RowTemplate.Height = 25;
@@ -36,35 +39,40 @@ namespace DYPLOM
 
 
 
-            dataGridView1.Rows[0].Cells[0].Value = "200";
-            dataGridView1.Rows[0].Cells[1].Value = "0";
+            dataGridView1.Rows[0].Cells[0].Value = "380";
+            dataGridView1.Rows[0].Cells[1].Value = "480";
             dataGridView1.Rows[0].Cells[2].Value = "0";
             dataGridView1.Rows[0].Cells[3].Value = "45000";
 
-            dataGridView1.Rows[1].Cells[0].Value = "150";
-            dataGridView1.Rows[1].Cells[1].Value = "140";
-            dataGridView1.Rows[1].Cells[2].Value = "100";
+            dataGridView1.Rows[1].Cells[0].Value = "190";
+            dataGridView1.Rows[1].Cells[1].Value = "190";
+            dataGridView1.Rows[1].Cells[2].Value = "0";
             dataGridView1.Rows[1].Cells[3].Value = "50000";
 
             dataGridView1.Rows[2].Cells[0].Value = "0";
-            dataGridView1.Rows[2].Cells[1].Value = "200";
+            dataGridView1.Rows[2].Cells[1].Value = "360";
             dataGridView1.Rows[2].Cells[2].Value = "0";
             dataGridView1.Rows[2].Cells[3].Value = "38000";
 
-            dataGridView1.Rows[3].Cells[0].Value = "250";
-            dataGridView1.Rows[3].Cells[1].Value = "0";
+            dataGridView1.Rows[3].Cells[0].Value = "480";
+            dataGridView1.Rows[3].Cells[1].Value = "480";
             dataGridView1.Rows[3].Cells[2].Value = "0";
             dataGridView1.Rows[3].Cells[3].Value = "20000";
 
-            dataGridView1.Rows[4].Cells[0].Value = "0";
-            dataGridView1.Rows[4].Cells[1].Value = "0";
-            dataGridView1.Rows[4].Cells[2].Value = "250";
+            dataGridView1.Rows[4].Cells[0].Value = "480";
+            dataGridView1.Rows[4].Cells[1].Value = "480";
+            dataGridView1.Rows[4].Cells[2].Value = "0";
             dataGridView1.Rows[4].Cells[3].Value = "35000";
 
-            dataGridView1.Rows[5].Cells[0].Value = "1";
-            dataGridView1.Rows[5].Cells[1].Value = "1";
+            dataGridView1.Rows[5].Cells[0].Value = "0";
+            dataGridView1.Rows[5].Cells[1].Value = "0";
             dataGridView1.Rows[5].Cells[2].Value = "1";
             dataGridView1.Rows[5].Cells[3].Value = "100";
+
+            dataGridView1.Rows[6].Cells[0].Value = "1";
+            dataGridView1.Rows[6].Cells[1].Value = "1";
+            dataGridView1.Rows[6].Cells[2].Value = "1";
+            dataGridView1.Rows[6].Cells[3].Value = "100";
 
         }
 
@@ -112,7 +120,7 @@ namespace DYPLOM
 
             double a71 = Convert.ToDouble(textBox4.Text);
             double a72 = Convert.ToDouble(textBox5.Text);
-            double a73 = Convert.ToDouble(textBox6.Text);
+            double a73 = Convert.ToDouble(textBox6.Text); 
 
 
             double a74 = Convert.ToDouble(textBox1.Text);
@@ -154,7 +162,12 @@ namespace DYPLOM
             Simplex S = new Simplex(table, sign);
             double[] result = new double[3];
             double[,] table_result;
-           // Symplex S = new Symplex(table);
+            FileInfo f = new FileInfo(@"E:/1.txt");
+            System.Diagnostics.Process.Start(@"E:/2.txt");
+
+            //   FileStream s = f.Open(FileMode.Open, FileAccess.Read);
+
+            // Symplex S = new Symplex(table);
             table_result = S.Calculate(result);
            /* Console.WriteLine("Решенная симплекс-таблица:");
             for (int i = 0; i < table_result.GetLength(0); i++)
@@ -170,6 +183,11 @@ namespace DYPLOM
             Console.WriteLine("X[2] = " + result[1]);
             Console.WriteLine("X[3] = " + result[2]);*/
             Console.ReadLine();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"E:/1.txt");
         }
     }
 }

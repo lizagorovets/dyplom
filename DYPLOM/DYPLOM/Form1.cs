@@ -30,15 +30,7 @@ namespace DYPLOM
         bool R_P14 = false;
         bool R_P8 = false;
         bool R_P5 = false;
-        bool draw = false;
 
-        int pointX;
-        int pointY;
-        bool drawRightPoint = false;
-        bool drawP1 = false;
-        bool drawP2 = false;
-        bool drawLeftPoint = false;
-        string key;
         FIndPoints findPoints;
         ControlImpl control;
         public Form1()
@@ -190,11 +182,12 @@ namespace DYPLOM
             /*строим касательную к головке первой плюсневой кости */
             Line P1P11 = new Line("P1", "P11", findPoints.getRightPoints());
             P1P11.draw(pictureBox1);
-            findPoints.R_P16Draw(pictureBox1);
+            findPoints.R_P16Draw(pictureBox1, findPoints.getRightPoints());
             Line P1P16 = new Line("P1", "P16", findPoints.getRightPoints());
             P1P16.draw(pictureBox1);
             double angle = findPoints.countAngle("P1", "P11", "P16", findPoints.getRightPoints());
             textBox4.Text = angle.ToString();
+
             /*строим касательную к головке пятой плюсневой кости */
             Line P2P14 = new Line("P2", "P14", findPoints.getRightPoints());
             P2P14.draw(pictureBox1);
@@ -265,6 +258,87 @@ namespace DYPLOM
 
         }
 
+        private void button23_Click(object sender, EventArgs e)
+        {
+            findPoints.Z_Draw(findPoints.getLeftPoints(), pictureBox2);
+            
+            /*строим касательную к головке пятой плюсневой кости */
+            Line P1P2 = new Line("P1", "P2", findPoints.getLeftPoints());
+            P1P2.draw(pictureBox2);
+            Line P1P11 = new Line("P1", "P11", findPoints.getLeftPoints());
+            P1P11.draw(pictureBox2);
+            findPoints.L_P16Draw(pictureBox2);
+            Line P1P16 = new Line("P1", "P16", findPoints.getLeftPoints());
+            P1P16.draw(pictureBox2);
+            double angle = findPoints.countAngle("P1", "P11", "P16", findPoints.getLeftPoints());
+             textBox22.Text = angle.ToString();
+
+            /*строим касательную к головке пятой плюсневой кости */
+            Line P2P14 = new Line("P2", "P14", findPoints.getLeftPoints());
+            P2P14.draw(pictureBox2);
+            findPoints.L_P15Draw(pictureBox2);
+            Line P2P15 = new Line("P2", "P15", findPoints.getLeftPoints());
+            P2P15.draw(pictureBox2);
+            double angle2 = findPoints.countAngle("P2", "P14", "P15", findPoints.getLeftPoints());
+            textBox21.Text = angle2.ToString();
+
+            /*строим прямую между Р3 и Р4 */
+            Line P3P4 = new Line("P3", "P4", findPoints.getLeftPoints());
+            P3P4.draw(pictureBox2);
+            /*строим перпендикуляр к Р3Р4 */
+            findPoints.L_P9Draw(pictureBox2);
+            findPoints.L_P10Draw(pictureBox2);
+            Line P4P9 = new Line("P4", "P9", findPoints.getLeftPoints());
+            P4P9.draw(pictureBox2);
+            /*строим касательную к пяточной облалсти  */
+            Line P4P10 = new Line("P4", "P10", findPoints.getLeftPoints());
+            P4P10.draw(pictureBox2);
+            /*угол пяточной области  */
+            double angle3 = findPoints.countAngle("P4", "P9", "P10", findPoints.getLeftPoints());
+            textBox20.Text = angle3.ToString();
+
+            findPoints.R_P7Draw(findPoints.getLeftPoints(), pictureBox2);
+            Line ZP7 = new Line("Z", "P7", findPoints.getLeftPoints());
+            ZP7.draw(pictureBox2);
+
+            /*строим Р7Р8*/
+            Line P7P8 = new Line("P7", "P8", findPoints.getLeftPoints());
+            P7P8.draw(pictureBox2);
+
+            /*строим Р5Р6  и Р3Р6*/
+            findPoints.LP6_Draw(findPoints.getLeftPoints(), pictureBox2);
+            Line P5P6 = new Line("P5", "P6", findPoints.getLeftPoints());
+            P5P6.draw(pictureBox2);
+            // Line P3P6 = new Line("P3", "P6", findPoints.getRightPoints());
+            // P3P6.draw(pictureBox1);
+
+            /*строим Р20Р6 */
+            findPoints.RP20_Draw(findPoints.getLeftPoints(), pictureBox2);
+            Line P6P20 = new Line("P6", "P20", findPoints.getLeftPoints());
+            P6P20.draw(pictureBox2);
+            findPoints.LP18_Draw(findPoints.getLeftPoints(), pictureBox2);
+            findPoints.LP19_Draw(findPoints.getLeftPoints(), pictureBox2);
+
+            findPoints.L_P17Draw(pictureBox2);
+            Line P17P19 = new Line("P17", "P19", findPoints.getLeftPoints());
+            P17P19.draw(pictureBox2);
+
+            findPoints.L_P21Draw(pictureBox2);
+            Line P18P21 = new Line("P18", "P21", findPoints.getLeftPoints());
+            P18P21.color = Color.Red;
+            P18P21.draw(pictureBox2);
+            double l1 = P17P19.countLengh();
+            double l2 = P18P21.countLengh();
+            double k = Math.Round(l1 / l2, 2);
+            textBox19.Text = k.ToString();
+
+            Analizator analizator = new Analizator();
+            textBox26.Text = analizator.x1Analize(angle);
+            textBox25.Text = analizator.x2Analize(angle2);
+            textBox24.Text = analizator.x4Analize(angle3);
+            textBox23.Text = analizator.x3Analize(k);
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             string lName = textBox12.Text;
@@ -285,11 +359,6 @@ namespace DYPLOM
             else MessageBox.Show("Ошибка добавления данных");
         }
 
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -385,6 +454,8 @@ namespace DYPLOM
             findPoints.L_P2Draw(pictureBox2);
             findPoints.L_P3Draw(pictureBox2);
             findPoints.L_P4Draw(pictureBox2);
+            findPoints.L_P5Draw(pictureBox2);
+
 
         }
 
@@ -433,7 +504,7 @@ namespace DYPLOM
                 y = Convert.ToInt32(e.Y); // координата по оси Y
                 setPointImg(x, y, pictureBox2);
                 findPoints.createLeftPoints(x, y, "P14");
-                findPoints.writeName(x, y, "P14", pictureBox2);
+                findPoints.writeName(x-30, y, "P14", pictureBox2);
                 R_P14 = false;
             }
             if (R_P8 == true)
@@ -655,5 +726,15 @@ namespace DYPLOM
         {
 
         }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form = new Form2();
+            form.ShowDialog();
+
+        }
+
+ 
     }
 }

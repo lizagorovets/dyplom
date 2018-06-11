@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.загрузитьПациентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.новыйПациентToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.close = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.действияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -64,6 +65,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -90,6 +93,8 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
@@ -159,42 +164,36 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.label75 = new System.Windows.Forms.Label();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.textBox41 = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.textBox36 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label38 = new System.Windows.Forms.Label();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.label72 = new System.Windows.Forms.Label();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.textBox42 = new System.Windows.Forms.TextBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -209,12 +208,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // загрузитьПациентаToolStripMenuItem
-            // 
-            this.загрузитьПациентаToolStripMenuItem.Name = "загрузитьПациентаToolStripMenuItem";
-            this.загрузитьПациентаToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.загрузитьПациентаToolStripMenuItem.Text = "Найти пациента";
             // 
             // textBox1
             // 
@@ -267,11 +260,12 @@
             this.textBox2.Size = new System.Drawing.Size(153, 22);
             this.textBox2.TabIndex = 28;
             // 
-            // новыйПациентToolStripMenuItem
+            // close
             // 
-            this.новыйПациентToolStripMenuItem.Name = "новыйПациентToolStripMenuItem";
-            this.новыйПациентToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.новыйПациентToolStripMenuItem.Text = "Новый пациент";
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(128, 26);
+            this.close.Text = "Выйти";
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // menuStrip1
             // 
@@ -287,8 +281,7 @@
             // действияToolStripMenuItem
             // 
             this.действияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.новыйПациентToolStripMenuItem,
-            this.загрузитьПациентаToolStripMenuItem});
+            this.close});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
             this.действияToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.действияToolStripMenuItem.Text = "Действия";
@@ -341,6 +334,22 @@
             this.tabPage1.Text = "Данные пациента";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(319, 93);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(354, 163);
+            this.richTextBox3.TabIndex = 91;
+            this.richTextBox3.Text = "";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(712, 131);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(354, 331);
+            this.richTextBox4.TabIndex = 90;
+            this.richTextBox4.Text = "";
             // 
             // label25
             // 
@@ -599,6 +608,23 @@
             this.tabPage2.Text = "Новый пациент";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(307, 373);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(354, 22);
+            this.textBox7.TabIndex = 86;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label30.Location = new System.Drawing.Point(304, 346);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(67, 18);
+            this.label30.TabIndex = 85;
+            this.label30.Text = "Диагноз";
+            // 
             // dateTimePicker3
             // 
             this.dateTimePicker3.Location = new System.Drawing.Point(124, 148);
@@ -842,7 +868,26 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Плантограмма";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(3, 10);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(377, 28);
+            this.button26.TabIndex = 51;
+            this.button26.Text = "Загрузить плантограмму правой стопы";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(383, 10);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(377, 28);
+            this.button25.TabIndex = 49;
+            this.button25.Text = "Загрузить плантограмму правой стопы";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // panel3
             // 
@@ -1068,6 +1113,7 @@
             this.button23.TabIndex = 44;
             this.button23.Text = "Построить плантограмму для левой стопы";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // panel2
             // 
@@ -1502,6 +1548,233 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.pictureBox3);
+            this.tabPage4.Controls.Add(this.pictureBox4);
+            this.tabPage4.Controls.Add(this.textBox27);
+            this.tabPage4.Controls.Add(this.textBox28);
+            this.tabPage4.Controls.Add(this.textBox37);
+            this.tabPage4.Controls.Add(this.textBox29);
+            this.tabPage4.Controls.Add(this.label77);
+            this.tabPage4.Controls.Add(this.textBox30);
+            this.tabPage4.Controls.Add(this.label76);
+            this.tabPage4.Controls.Add(this.textBox31);
+            this.tabPage4.Controls.Add(this.label75);
+            this.tabPage4.Controls.Add(this.textBox32);
+            this.tabPage4.Controls.Add(this.label74);
+            this.tabPage4.Controls.Add(this.textBox33);
+            this.tabPage4.Controls.Add(this.label73);
+            this.tabPage4.Controls.Add(this.textBox42);
+            this.tabPage4.Controls.Add(this.label78);
+            this.tabPage4.Controls.Add(this.textBox41);
+            this.tabPage4.Controls.Add(this.label72);
+            this.tabPage4.Controls.Add(this.textBox40);
+            this.tabPage4.Controls.Add(this.textBox34);
+            this.tabPage4.Controls.Add(this.textBox39);
+            this.tabPage4.Controls.Add(this.textBox35);
+            this.tabPage4.Controls.Add(this.textBox38);
+            this.tabPage4.Controls.Add(this.textBox36);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1367, 907);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Плантограмма";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(393, -1);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(386, 765);
+            this.pictureBox3.TabIndex = 122;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::DYPLOM.Properties.Resources._19;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(374, 761);
+            this.pictureBox4.TabIndex = 121;
+            this.pictureBox4.TabStop = false;
+            // 
+            // textBox27
+            // 
+            this.textBox27.Location = new System.Drawing.Point(1237, 177);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(119, 22);
+            this.textBox27.TabIndex = 120;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Location = new System.Drawing.Point(1237, 146);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(119, 22);
+            this.textBox28.TabIndex = 119;
+            // 
+            // textBox37
+            // 
+            this.textBox37.Location = new System.Drawing.Point(1174, 89);
+            this.textBox37.Name = "textBox37";
+            this.textBox37.Size = new System.Drawing.Size(57, 22);
+            this.textBox37.TabIndex = 107;
+            // 
+            // textBox29
+            // 
+            this.textBox29.Location = new System.Drawing.Point(1237, 119);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(119, 22);
+            this.textBox29.TabIndex = 118;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(792, 67);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(86, 17);
+            this.label77.TabIndex = 97;
+            this.label77.Text = "Результаты";
+            // 
+            // textBox30
+            // 
+            this.textBox30.Location = new System.Drawing.Point(1237, 88);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(119, 22);
+            this.textBox30.TabIndex = 117;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(789, 93);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(176, 17);
+            this.label76.TabIndex = 98;
+            this.label76.Text = "Угол наклона 1 пальца(°)";
+            // 
+            // textBox31
+            // 
+            this.textBox31.Location = new System.Drawing.Point(1029, 175);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(139, 22);
+            this.textBox31.TabIndex = 116;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(789, 120);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(176, 17);
+            this.label75.TabIndex = 99;
+            this.label75.Text = "Угол наклона 5 пальца(°)";
+            // 
+            // textBox32
+            // 
+            this.textBox32.Location = new System.Drawing.Point(1029, 147);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(139, 22);
+            this.textBox32.TabIndex = 115;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(792, 153);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(123, 17);
+            this.label74.TabIndex = 100;
+            this.label74.Text = "Пяточный угол(°)";
+            // 
+            // textBox33
+            // 
+            this.textBox33.Location = new System.Drawing.Point(1029, 120);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Size = new System.Drawing.Size(139, 22);
+            this.textBox33.TabIndex = 114;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(792, 181);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(135, 17);
+            this.label73.TabIndex = 101;
+            this.label73.Text = "Коэффицент свода";
+            // 
+            // textBox42
+            // 
+            this.textBox42.Location = new System.Drawing.Point(966, 89);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.Size = new System.Drawing.Size(57, 22);
+            this.textBox42.TabIndex = 102;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(1171, 54);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(91, 17);
+            this.label78.TabIndex = 112;
+            this.label78.Text = "Левая стопа";
+            // 
+            // textBox41
+            // 
+            this.textBox41.Location = new System.Drawing.Point(966, 119);
+            this.textBox41.Name = "textBox41";
+            this.textBox41.Size = new System.Drawing.Size(57, 22);
+            this.textBox41.TabIndex = 103;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(963, 58);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(99, 17);
+            this.label72.TabIndex = 111;
+            this.label72.Text = "Правая стопа";
+            // 
+            // textBox40
+            // 
+            this.textBox40.Location = new System.Drawing.Point(966, 148);
+            this.textBox40.Name = "textBox40";
+            this.textBox40.Size = new System.Drawing.Size(57, 22);
+            this.textBox40.TabIndex = 104;
+            // 
+            // textBox34
+            // 
+            this.textBox34.Location = new System.Drawing.Point(1174, 176);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(57, 22);
+            this.textBox34.TabIndex = 110;
+            // 
+            // textBox39
+            // 
+            this.textBox39.Location = new System.Drawing.Point(966, 176);
+            this.textBox39.Name = "textBox39";
+            this.textBox39.Size = new System.Drawing.Size(57, 22);
+            this.textBox39.TabIndex = 105;
+            // 
+            // textBox35
+            // 
+            this.textBox35.Location = new System.Drawing.Point(1174, 148);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.Size = new System.Drawing.Size(57, 22);
+            this.textBox35.TabIndex = 109;
+            // 
+            // textBox38
+            // 
+            this.textBox38.Location = new System.Drawing.Point(1029, 89);
+            this.textBox38.Name = "textBox38";
+            this.textBox38.Size = new System.Drawing.Size(139, 22);
+            this.textBox38.TabIndex = 106;
+            // 
+            // textBox36
+            // 
+            this.textBox36.Location = new System.Drawing.Point(1174, 120);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.Size = new System.Drawing.Size(57, 22);
+            this.textBox36.TabIndex = 108;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(127, 277);
@@ -1537,286 +1810,6 @@
             this.label38.Size = new System.Drawing.Size(111, 17);
             this.label38.TabIndex = 40;
             this.label38.Text = "Дата рождения";
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(383, 10);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(377, 28);
-            this.button25.TabIndex = 49;
-            this.button25.Text = "Загрузить плантограмму правой стопы";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
-            // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(3, 10);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(377, 28);
-            this.button26.TabIndex = 51;
-            this.button26.Text = "Загрузить плантограмму правой стопы";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(307, 373);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(354, 22);
-            this.textBox7.TabIndex = 86;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label30.Location = new System.Drawing.Point(304, 346);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(67, 18);
-            this.label30.TabIndex = 85;
-            this.label30.Text = "Диагноз";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.pictureBox3);
-            this.tabPage4.Controls.Add(this.pictureBox4);
-            this.tabPage4.Controls.Add(this.textBox27);
-            this.tabPage4.Controls.Add(this.textBox28);
-            this.tabPage4.Controls.Add(this.textBox37);
-            this.tabPage4.Controls.Add(this.textBox29);
-            this.tabPage4.Controls.Add(this.label77);
-            this.tabPage4.Controls.Add(this.textBox30);
-            this.tabPage4.Controls.Add(this.label76);
-            this.tabPage4.Controls.Add(this.textBox31);
-            this.tabPage4.Controls.Add(this.label75);
-            this.tabPage4.Controls.Add(this.textBox32);
-            this.tabPage4.Controls.Add(this.label74);
-            this.tabPage4.Controls.Add(this.textBox33);
-            this.tabPage4.Controls.Add(this.label73);
-            this.tabPage4.Controls.Add(this.textBox42);
-            this.tabPage4.Controls.Add(this.label78);
-            this.tabPage4.Controls.Add(this.textBox41);
-            this.tabPage4.Controls.Add(this.label72);
-            this.tabPage4.Controls.Add(this.textBox40);
-            this.tabPage4.Controls.Add(this.textBox34);
-            this.tabPage4.Controls.Add(this.textBox39);
-            this.tabPage4.Controls.Add(this.textBox35);
-            this.tabPage4.Controls.Add(this.textBox38);
-            this.tabPage4.Controls.Add(this.textBox36);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1367, 907);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Плантограмма";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // textBox27
-            // 
-            this.textBox27.Location = new System.Drawing.Point(1237, 177);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(119, 22);
-            this.textBox27.TabIndex = 120;
-            // 
-            // textBox28
-            // 
-            this.textBox28.Location = new System.Drawing.Point(1237, 146);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(119, 22);
-            this.textBox28.TabIndex = 119;
-            // 
-            // textBox29
-            // 
-            this.textBox29.Location = new System.Drawing.Point(1237, 119);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(119, 22);
-            this.textBox29.TabIndex = 118;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Location = new System.Drawing.Point(1237, 88);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(119, 22);
-            this.textBox30.TabIndex = 117;
-            // 
-            // textBox31
-            // 
-            this.textBox31.Location = new System.Drawing.Point(1029, 175);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(139, 22);
-            this.textBox31.TabIndex = 116;
-            // 
-            // textBox32
-            // 
-            this.textBox32.Location = new System.Drawing.Point(1029, 147);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(139, 22);
-            this.textBox32.TabIndex = 115;
-            // 
-            // textBox33
-            // 
-            this.textBox33.Location = new System.Drawing.Point(1029, 120);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(139, 22);
-            this.textBox33.TabIndex = 114;
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(963, 58);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(99, 17);
-            this.label72.TabIndex = 111;
-            this.label72.Text = "Правая стопа";
-            // 
-            // textBox34
-            // 
-            this.textBox34.Location = new System.Drawing.Point(1174, 176);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(57, 22);
-            this.textBox34.TabIndex = 110;
-            // 
-            // textBox35
-            // 
-            this.textBox35.Location = new System.Drawing.Point(1174, 148);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(57, 22);
-            this.textBox35.TabIndex = 109;
-            // 
-            // textBox36
-            // 
-            this.textBox36.Location = new System.Drawing.Point(1174, 120);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(57, 22);
-            this.textBox36.TabIndex = 108;
-            // 
-            // textBox37
-            // 
-            this.textBox37.Location = new System.Drawing.Point(1174, 89);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(57, 22);
-            this.textBox37.TabIndex = 107;
-            // 
-            // textBox38
-            // 
-            this.textBox38.Location = new System.Drawing.Point(1029, 89);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(139, 22);
-            this.textBox38.TabIndex = 106;
-            // 
-            // textBox39
-            // 
-            this.textBox39.Location = new System.Drawing.Point(966, 176);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(57, 22);
-            this.textBox39.TabIndex = 105;
-            // 
-            // textBox40
-            // 
-            this.textBox40.Location = new System.Drawing.Point(966, 148);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(57, 22);
-            this.textBox40.TabIndex = 104;
-            // 
-            // textBox41
-            // 
-            this.textBox41.Location = new System.Drawing.Point(966, 119);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(57, 22);
-            this.textBox41.TabIndex = 103;
-            // 
-            // textBox42
-            // 
-            this.textBox42.Location = new System.Drawing.Point(966, 89);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(57, 22);
-            this.textBox42.TabIndex = 102;
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(792, 181);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(135, 17);
-            this.label73.TabIndex = 101;
-            this.label73.Text = "Коэффицент свода";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(792, 153);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(123, 17);
-            this.label74.TabIndex = 100;
-            this.label74.Text = "Пяточный угол(°)";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(789, 120);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(176, 17);
-            this.label75.TabIndex = 99;
-            this.label75.Text = "Угол наклона 5 пальца(°)";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(789, 93);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(176, 17);
-            this.label76.TabIndex = 98;
-            this.label76.Text = "Угол наклона 1 пальца(°)";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(792, 67);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(86, 17);
-            this.label77.TabIndex = 97;
-            this.label77.Text = "Результаты";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(1171, 54);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(91, 17);
-            this.label78.TabIndex = 112;
-            this.label78.Text = "Левая стопа";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(393, -1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(386, 765);
-            this.pictureBox3.TabIndex = 122;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::DYPLOM.Properties.Resources._19;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(374, 761);
-            this.pictureBox4.TabIndex = 121;
-            this.pictureBox4.TabStop = false;
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(319, 93);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(354, 163);
-            this.richTextBox3.TabIndex = 91;
-            this.richTextBox3.Text = "c";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Location = new System.Drawing.Point(712, 131);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(354, 331);
-            this.richTextBox4.TabIndex = 90;
-            this.richTextBox4.Text = "c";
             // 
             // Form1
             // 
@@ -1864,15 +1857,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStripMenuItem загрузитьПациентаToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ToolStripMenuItem новыйПациентToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem close;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem действияToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;

@@ -75,19 +75,34 @@ namespace DYPLOM
             find = false;
             
         }
-        public void R_P16Draw(PictureBox pictureBox)
+        public void R_P16Draw(PictureBox pictureBox, Dictionary<String, Points> points)
         {
             Bitmap bmp = new Bitmap(pictureBox.Image);
             createRightPoints(getRightPoints()["P1"].getX() , getRightPoints()["P1"].getY() - 130, "P16");
             pictureBox.Image = (Image)bmp;
             writeName(getRightPoints()["P1"].getX() + 10, getRightPoints()["P1"].getY() - 130, "P16", pictureBox);
         }
+        public void L_P16Draw(PictureBox pictureBox)
+        {
+            Bitmap bmp = new Bitmap(pictureBox.Image);
+            createLeftPoints(getLeftPoints()["P1"].getX()-10, getLeftPoints()["P1"].getY() - 130, "P16");
+            pictureBox.Image = (Image)bmp;
+            writeName(getLeftPoints()["P1"].getX()-20 , getLeftPoints()["P1"].getY() - 130, "P16", pictureBox);
+        }
         public void R_P15Draw(PictureBox pictureBox)
         {
             Bitmap bmp = new Bitmap(pictureBox.Image);
-            createRightPoints(getRightPoints()["P2"].getX() - 10, getRightPoints()["P2"].getY() - 100, "P15");
+            createRightPoints(getRightPoints()["P2"].getX() + 10, getRightPoints()["P2"].getY() - 100, "P15");
             pictureBox.Image = (Image)bmp;
-            writeName(getRightPoints()["P2"].getX() - 10, getRightPoints()["P2"].getY() - 100, "P15", pictureBox);
+            writeName(getRightPoints()["P2"].getX() + 10, getRightPoints()["P2"].getY() - 100, "P15", pictureBox);
+        }
+
+        public void L_P15Draw(PictureBox pictureBox)
+        {
+            Bitmap bmp = new Bitmap(pictureBox.Image);
+            createLeftPoints(getLeftPoints()["P2"].getX() , getLeftPoints()["P2"].getY() - 100, "P15");
+            pictureBox.Image = (Image)bmp;
+            writeName(getLeftPoints()["P2"].getX() -10, getLeftPoints()["P2"].getY() - 100, "P15", pictureBox);
         }
         public void R_P17Draw(PictureBox pictureBox)
         {
@@ -95,14 +110,30 @@ namespace DYPLOM
             createRightPoints(getRightPoints()["P18"].getX() +17 , getRightPoints()["P18"].getY() - 5, "P17");
             pictureBox.Image = (Image)bmp;
             writeName(getRightPoints()["P18"].getX() +10, getRightPoints()["P18"].getY() +5, "P17", pictureBox);
-        }
-        public void R_P21Draw(PictureBox pictureBox)
+        }        
+    public void R_P21Draw(PictureBox pictureBox)
         {
             Bitmap bmp = new Bitmap(pictureBox.Image);
             createRightPoints(getRightPoints()["P17"].getX() + 44, getRightPoints()["P17"].getY()-10 , "P21");
             pictureBox.Image = (Image)bmp;
             writeName(getRightPoints()["P17"].getX() +5, getRightPoints()["P17"].getY()-20 , "P21", pictureBox);
         }
+
+        public void L_P17Draw(PictureBox pictureBox)
+        {
+            Bitmap bmp = new Bitmap(pictureBox.Image);
+            createLeftPoints(getLeftPoints()["P18"].getX() - 17, getLeftPoints()["P18"].getY() - 5, "P17");
+            pictureBox.Image = (Image)bmp;
+            writeName(getLeftPoints()["P18"].getX() -33, getLeftPoints()["P18"].getY() + 10, "P17", pictureBox);
+        }
+        public void L_P21Draw(PictureBox pictureBox)
+        {
+            Bitmap bmp = new Bitmap(pictureBox.Image);
+            createLeftPoints(getLeftPoints()["P17"].getX() - 44, getLeftPoints()["P17"].getY() - 10, "P21");
+            pictureBox.Image = (Image)bmp;
+            writeName(getLeftPoints()["P17"].getX() -40, getLeftPoints()["P17"].getY() - 20, "P21", pictureBox);
+        }
+
         public void R_P9Draw(PictureBox pictureBox)
         {
             Bitmap bmp = new Bitmap(pictureBox.Image);
@@ -117,6 +148,22 @@ namespace DYPLOM
             pictureBox.Image = (Image)bmp;
             writeName(getRightPoints()["P4"].getX()-40, getRightPoints()["P4"].getY() - 90, "P10", pictureBox);
         }
+
+        public void L_P9Draw(PictureBox pictureBox)
+        {
+            Bitmap bmp = new Bitmap(pictureBox.Image);
+            createLeftPoints(getLeftPoints()["P4"].getX() + 5, getLeftPoints()["P4"].getY() - 100, "P9");
+            pictureBox.Image = (Image)bmp;
+            writeName(getLeftPoints()["P4"].getX() + 5, getLeftPoints()["P4"].getY() - 100, "P9", pictureBox);
+        }
+        public void L_P10Draw(PictureBox pictureBox)
+        {
+            Bitmap bmp = new Bitmap(pictureBox.Image);
+            createLeftPoints(getLeftPoints()["P4"].getX(), getLeftPoints()["P4"].getY() - 90, "P10");
+            pictureBox.Image = (Image)bmp;
+            writeName(getLeftPoints()["P4"].getX() - 40, getLeftPoints()["P4"].getY() - 90, "P10", pictureBox);
+        }
+
         public void R_P7Draw(Dictionary<string, Points> points, PictureBox pictureBox)
         {
             int x = (points["P3"].getX() + points["P4"].getX()) / 2;
@@ -152,6 +199,19 @@ namespace DYPLOM
             writeName(x, y+5, "P6", pictureBox);
 
         }
+
+        public void LP6_Draw(Dictionary<string, Points> points, PictureBox pictureBox)
+        {
+            int x = points["P3"].getX() - 12;
+            int y = points["P5"].getY() + 12;
+            Bitmap bitmap = new Bitmap(pictureBox.Image);
+            bitmap.SetPixel(x + 2, y, Color.FromArgb(255, 0, 0));
+
+            points.Add("P6", new Points(x, y, "P6"));
+            pictureBox.Image = (Image)bitmap;
+            writeName(x, y + 5, "P6", pictureBox);
+
+        }
         public void RP20_Draw(Dictionary<string, Points> points, PictureBox pictureBox)
         {
             int x = points["P2"].getX() ;
@@ -161,9 +221,11 @@ namespace DYPLOM
 
             points.Add("P20", new Points(x, y, "P20"));
             pictureBox.Image = (Image)bitmap;
-            writeName(x, y, "P20", pictureBox);
+            writeName(x, y+5, "P20", pictureBox);
 
         }
+
+
         public void RP18_Draw(Dictionary<string, Points> points, PictureBox pictureBox)
         {
             int x = points["P20"].getX() + 22;
@@ -174,8 +236,20 @@ namespace DYPLOM
             points.Add("P18", new Points(x, y, "P18"));
             pictureBox.Image = (Image)bitmap;
             writeName(x-35, y-10, "P18", pictureBox);
-
         }
+
+        public void LP18_Draw(Dictionary<string, Points> points, PictureBox pictureBox)
+        {
+            int x = points["P20"].getX() - 15;
+            int y = points["P20"].getY() + 90;
+            Bitmap bitmap = new Bitmap(pictureBox.Image);
+            bitmap.SetPixel(x, y, Color.FromArgb(255, 0, 0));
+
+            points.Add("P18", new Points(x, y, "P18"));
+            pictureBox.Image = (Image)bitmap;
+            writeName(x , y - 10, "P18", pictureBox);
+        }
+
         public void RP19_Draw(Dictionary<string, Points> points, PictureBox pictureBox)
         {
             int x = points["P18"].getX() +78;
@@ -186,8 +260,20 @@ namespace DYPLOM
             points.Add("P19", new Points(x, y, "P19"));
             pictureBox.Image = (Image)bitmap;
             writeName(x, y, "P19", pictureBox);
-
         }
+
+        public void LP19_Draw(Dictionary<string, Points> points, PictureBox pictureBox)
+        {
+            int x = points["P18"].getX() - 75;
+            int y = points["P18"].getY() - 19;
+            Bitmap bitmap = new Bitmap(pictureBox.Image);
+            bitmap.SetPixel(x, y, Color.FromArgb(255, 0, 0));
+
+            points.Add("P19", new Points(x, y, "P19"));
+            pictureBox.Image = (Image)bitmap;
+            writeName(x-35, y, "P19", pictureBox);
+        }
+
         public void R_P3Draw(PictureBox pictureBox)
         {
             find = false;
@@ -263,7 +349,7 @@ namespace DYPLOM
                         find = true;
                         createLeftPoints(x2, y2, "P1");
                         pictureBox.Image = (Image)bmp;
-                        writeName(x2, y2, "P1", pictureBox);
+                        writeName(x2, y2-5, "P1", pictureBox);
                         break;
                     }
                 }
@@ -343,7 +429,7 @@ namespace DYPLOM
                         find = true;
                         createLeftPoints(x, y, "P4");
                         pictureBox.Image = (Image)bmp;
-                        writeName(x, y, "P4", pictureBox);
+                        writeName(x, y+10, "P4", pictureBox);
                         break;
                     }
                 }
@@ -379,6 +465,33 @@ namespace DYPLOM
             }
             find = false;
         }
+
+        public void L_P5Draw(PictureBox pictureBox)
+        {
+            find = false;
+            Bitmap bmp = new Bitmap(pictureBox.Image);
+            for (int y = bmp.Height - 1; y > 0; y--)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    if (bmp.GetPixel(x, y) == color)
+                    {
+                        bmp.SetPixel(x, y, Color.FromArgb(255, 0, 0));
+                        find = true;
+                        createLeftPoints(x, y, "P5");
+                        pictureBox.Image = (Image)bmp;
+                        writeName(x, y-10, "P5", pictureBox);
+                        break;
+                    }
+                }
+                if (find == true)
+                {
+                    break;
+                }
+            }
+            find = false;
+        }
+
         public void createRightPoints(int x, int y, string name)
         {
             Points point = new Points(x, y, name);
